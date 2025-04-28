@@ -1,8 +1,10 @@
+import React from "react";
+
 function AddBook() {
-    const handleButtonAddBook = () => {
-        //const fs = require('fs')
-        const bookList = './booksData.json'
-        const newBook = {}
+    const handleButtonAddBook = async () => {
+        const newBook = {
+          title
+        }
     };
     return (
         <div className="fixed-bottom">
