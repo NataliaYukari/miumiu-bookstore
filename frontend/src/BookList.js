@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import BookModal from './BookModal.js';
 import EditBookModal from './EditBookModal.js';
+import DeleteModal from './DeleteModal.js';
+import AddBook from './AddBook.js';
 
 function BookList() {
   const [bookList, setBookList] = useState([]);
@@ -10,21 +12,26 @@ function BookList() {
   const [editSelectedBook, setEditSelectedBook] = useState(null);
   const [showEditModal, setShowEditModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [toDeleteBook, setToDeleteBook] = useState(null);
+  const [showDeleteToast, setShowDeleteToast] = useState(false);
+
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch("http://localhost:5000");
+      const data = await response.json();
+      setBookList(data);
+
+    } catch (error) {
+      console.error("Error to find books: ", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await fetch("http://localhost:5000");
-        const data = await response.json();
-        setBookList(data);
-
-      } catch (error) {
-        console.error("Error to find books: ", error);
-      }
-    };
-
     fetchBooks();
   }, []);
+
+
 
   const handleUpdateBook = async (updatedBook) => {
     try {
@@ -50,6 +57,26 @@ function BookList() {
     console.error("Error:", error)
   }
   };
+
+  const handleDeleteBook = async (bookId) => {
+    try {
+      const response = await fetch(`http://localhost:5000/${bookId}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        setBookList((prevList) => prevList.filter((book) => book.id !== bookId));
+        setShowDeleteToast(true)
+        setShowDeleteModal(false)
+
+      } else {
+        console.error("Error in deleting a book");
+      }
+
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
    
   const handleCardClick = (book) => {
     setSelectedBook(book);
@@ -67,6 +94,11 @@ function BookList() {
 
     setEditSelectedBook(book);
     setShowEditModal(true);
+  }
+
+  const handleDeleteButtonBook = (book) => {
+    setToDeleteBook(book);
+    setShowDeleteModal(true);
   }
 
   return (
@@ -95,9 +127,10 @@ function BookList() {
                     </button>
                     <button
                     className="btn btn-danger"
-                    onClick={
-                      (e) => e.stopPropagation()
-                    }
+                    onClick={ (e) => {
+                      e.stopPropagation();
+                      handleDeleteButtonBook(book);
+                    }}
                     >
                       <i className="bi bi-trash3-fill"></i>
                     </button>
@@ -114,11 +147,28 @@ function BookList() {
       >
         <div className="toast show bg-success text-white">
           <div className="toast-header bg-success text-white">
-            <strong className="me-auto">Sucesso!</strong>
+            <strong className="me-auto">Sucess!</strong>
             <button type="button" className="btn-close" onClick={() => setShowToast(false)}></button>
           </div>
           <div className="toast-body">
-            Livro atualizado com sucesso!
+            Book updated with success!
+          </div>
+        </div>
+      </div>
+    )}
+
+    {showDeleteToast && (
+      <div 
+        className="toast-container position-fixed bottom-0 end-0 p-3" 
+        style={{ zIndex: 9999 }}
+      >
+        <div className="toast show bg-success text-white">
+          <div className="toast-header bg-success text-white">
+            <strong className="me-auto">Sucess!</strong>
+            <button type="button" className="btn-close" onClick={() => setShowDeleteToast(false)}></button>
+          </div>
+          <div className="toast-body">
+            Book deleted with success!
           </div>
         </div>
       </div>
@@ -138,6 +188,15 @@ function BookList() {
         book= {editSelectedBook}
         onSave = {handleUpdateBook}
       />
+
+      <DeleteModal
+        show = {showDeleteModal}
+        onHide = {() => setShowDeleteModal(false)}
+        onDelete = {handleDeleteBook}
+        book = {toDeleteBook}
+      />
+
+      <AddBook onAddSuccess={fetchBooks}/>
     </div>
     
   );

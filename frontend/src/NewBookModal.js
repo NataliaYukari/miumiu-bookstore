@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function NewBookModal({ show, handleClose, onBookAdded }) {
+function NewBookModal({ show, onHide, onBookAdded, onAddSuccess }) {
     const [newBook, setNewBook] = useState({
         title: '',
         author: '',
@@ -25,22 +25,57 @@ function NewBookModal({ show, handleClose, onBookAdded }) {
                 body: JSON.stringify(newBook),
             });
 
-            if (response.ok)
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Livro adicionado!', data);
+        
+                if (onBookAdded) {
+                  onBookAdded(data.book);
+                }
+        
+                setNewBook({
+                  title: '',
+                  author: '',
+                  description: '',
+                  isbn: '',
+                  publisher: '',
+                  edition: '',
+                  year: '',
+                  pages: '',
+                  shoppingLink: '',
+                  coverImage: '',
+                });
+                onAddSuccess();
+                onHide();
+
+            } else {
+                console.error('Error in adding a new book');
+            }
+        } catch (error) {
+            console.error('Error:', error);
         }
-    }
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setNewBook((prev) => ({
+          ...prev,
+          [name]: value,
+        }));
+    };
 
     const fields = [
-        { label: "Title", name: "title" },
-        { label: "Author", name: "author" },
-        { label: "Description", name: "description" },
-        { label: "ISBN", name: "isbn" },
-        { label: "Publisher", name: "publisher" },
-        { label: "Edition", name: "edition" },
-        { label: "Year", name: "year" },
-        { label: "Pages", name: "pages" },
-        { label: "Shopping Link", name: "shoppingLink" },
-        { label: "Cover Image", name: "coverImage" }
-      ]
+        { name: 'title', label: 'Title' },
+        { name: 'author', label: 'Author' },
+        { name: 'description', label: 'Descriptions' },
+        { name: 'isbn', label: 'ISBN' },
+        { name: 'publisher', label: 'Publisher' },
+        { name: 'edition', label: 'Edition' },
+        { name: 'year', label: 'Year' },
+        { name: 'pages', label: 'Pages' },
+        { name: 'shoppingLink', label: 'Shopping link' },
+        { name: 'coverImage', label: 'Cover image' },
+    ];
 
     return (
         <div className={`modal fade ${show ? "show d-block" : "d-none"}`} tabIndex="-1">
@@ -61,7 +96,7 @@ function NewBookModal({ show, handleClose, onBookAdded }) {
                                     name= {field.name}
                                     id= {field.name}
                                     className= "form-control"
-                                    value= {editedBook?.[field.name] || ''}
+                                    value= {newBook?.[field.name] || ''}
                                     onChange= {handleChange} 
                                 >
                                 </input>
