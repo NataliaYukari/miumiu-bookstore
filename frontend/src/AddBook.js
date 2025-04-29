@@ -10,9 +10,10 @@ function AddBook({ onAddSuccess }) {
     };
     return (
       <div className="fixed-bottom">
-        <div className="d-flex justify-content-center bg-dark p-3">
+        <div className="d-flex justify-content-center p-3" id="addBookBar">
           <button
-            className="btn btn-primary"
+          id="addBookButton"
+            className="btn"
             onClick={handleButtonAddBook}
           >
             Add new book!

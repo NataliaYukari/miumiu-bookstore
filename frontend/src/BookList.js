@@ -102,12 +102,13 @@ function BookList() {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" id='mainBody'>
       <div className="row">
         {bookList.map((book) => (
           <div className="col-12 col-md-4 mb-4" key={book.id}>
             <div 
               className="card d-flex flex-row h-100" 
+              id='cardBody'
               style={{ cursor:"pointer", transition: "transform 0.2s" }}
               onClick={() => handleCardClick(book)}>
               <img src={ book.coverImage } className="card-img-left w-25" alt={book.title}/>
@@ -115,9 +116,10 @@ function BookList() {
                   <h5 className="card-title">{book.title}</h5>
                   <p className="card-text">{book.author}</p>
 
-                  <div className="d-flex justify-content-between">
+                  <div className="d-flex justify-content-end">
                     <button
-                    className="btn btn-primary"
+                    className="btn"
+                    id='buttonEdit'
                     onClick={(e) => {
                       e.stopPropagation();
                       handleEditButtonClick(book);
@@ -126,7 +128,8 @@ function BookList() {
                       <i className= "bi bi-pencil-square"></i>
                     </button>
                     <button
-                    className="btn btn-danger"
+                    className="btn"
+                    id='buttonDelete'
                     onClick={ (e) => {
                       e.stopPropagation();
                       handleDeleteButtonBook(book);

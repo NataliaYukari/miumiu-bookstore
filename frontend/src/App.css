@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+
+h1 {
+  font-family:'Shippori Mincho', serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: large;
+  color: black;
+}
+
+#mainImage {
+  width: 30%;
+  height: auto;
+}
+
+#headerText {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 18px;
+}
+
+#addBookBar {
+  background-color: #A69C94;
+  border-style: none;
+}
+
+#addBookButton {
+  background-color: #F2E3D5;
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 20px;
+  width: 250px;
+}
+
+#addBookButton:hover {
+  color: #F2E3D5;
+  background-color: #403831;
+}
+
+#mainBody {
+  padding-bottom: 70px;
+}
+
+#mainBody h5 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+}
+
+#mainBody #cardBody:hover {
+  border-style: solid;
+  border-color: #595045;
+}
+
+#mainBody #buttonDelete {
+  background-color: #BF3F34;
+  margin: 5px;
+}
+
+#mainBody #buttonEdit {
+  background-color: #0B9ED9;
+  margin: 5px;
+}
+
+#mainBody i {
+  color: white;
+}

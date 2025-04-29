@@ -1,30 +1,21 @@
 function Header() {
     return(
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                </div>
+        <header className="header-container">
+        <div className="container-fluid p-0">
+          <div className="header-image-container">
+            <div className="text-center">
+            <img
+              src="/img_minimalist_cat.jpg" 
+              alt="Header Background"
+              className="img-fluid"
+              id="mainImage"
+            />
+            <h1 className="display-3">Miumiu's Bookstore</h1>
+            <p id="headerText">Create your own book collection</p>
             </div>
-        </nav>
+          </div>
+        </div>
+      </header>
     );
 }
 
