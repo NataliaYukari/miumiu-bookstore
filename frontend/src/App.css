@@ -92,11 +92,109 @@ h1 {
   margin: 5px;
 }
 
+#mainBody #buttonDelete:hover {
+  background-color: #A60321;
+}
+
 #mainBody #buttonEdit {
   background-color: #0B9ED9;
   margin: 5px;
 }
 
+#mainBody #buttonEdit:hover {
+  background-color: #0378A6;
+  margin: 5px;
+}
+
 #mainBody i {
   color: white;
+}
+
+.modalLabel{
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 600;
+}
+
+#newBookCloseButton {
+  background-color: #595045;
+  font-family: 'Shippori Mincho', serif;
+}
+
+#newBookCloseButton:hover {
+  background-color: #403831;
+}
+
+#newBookSaveButton {
+  background-color: #0B9ED9;
+  border-color: #0B9ED9;
+  font-family: 'Shippori Mincho', serif;
+}
+
+#newBookSaveButton:hover {
+  background-color: #0378A6;
+}
+
+#editBookCloseButton {
+  background-color: #595045;
+  font-family: 'Shippori Mincho', serif;
+}
+
+#editBookCloseButton:hover {
+  background-color: #403831;
+}
+
+#editBookSaveButton {
+  background-color: #0B9ED9;
+  border-color: #0B9ED9;
+  font-family: 'Shippori Mincho', serif;
+}
+
+#editBookSaveButton:hover {
+  background-color: #0378A6;
+}
+
+#deleteButton {
+  background-color: #BF3F34;
+  font-family: 'Shippori Mincho', serif;
+}
+
+#cancelDeleteButton {
+  background-color: #0B9ED9;
+  border-color: #0B9ED9;
+  font-family: 'Shippori Mincho', serif;
+}
+
+#deleteButton:hover {
+  background-color: #A60321;
+}
+
+#cancelDeleteButton:hover {
+  background-color: #0378A6;
+}
+
+#bookEditButton {
+  background-color: #0B9ED9;
+  border-color: #0B9ED9;
+}
+
+#bookEditButton:hover {
+  background-color: #0378A6;
+}
+
+#bookCloseButton {
+  font-family: 'Shippori Mincho', serif;
+  background-color: #595045;
+}
+
+#bookCloseButton:hover {
+  background-color: #403831;
+}
+
+#bookModalText b {
+  font-family: 'Shippori Mincho', serif;
+}
+
+#buyHere {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;;
 }

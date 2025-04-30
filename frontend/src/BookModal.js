@@ -20,10 +20,10 @@ function BookModal({ show, onHide, book, onEdit }) {
                                 alt= {book.title}
                                 className="img-fluid rounded mb-4"
                                 ></img>
-                                <p><a href={book.shoppingLink} target="_blank" rel="noopener noreferrer"><b>Buy here!</b></a></p>
+                                <p><a href={book.shoppingLink} target="_blank" rel="noopener noreferrer" id="buyHere"><b>Buy here!</b></a></p>
                             </div>
 
-                            <div className="col-md-8">
+                            <div className="col-md-8" id="bookModalText">
                                 <p><b>Author:</b> {book.author}</p>
                                 <p><b>Description:</b> {book.description}</p>
                                 <p><b>ISBN:</b> {book.isbn}</p>
@@ -37,10 +37,10 @@ function BookModal({ show, onHide, book, onEdit }) {
                     </div>
                     <div className="modal-footer">
                         
-                        <button type="button" className="btn btn-primary" onClick={() => onEdit(book)}>
+                        <button type="button" className="btn btn-primary" id="bookEditButton" onClick={() => onEdit(book)}>
                             <i className= "bi bi-pencil-square"></i>
                         </button>
-                        <button type="button" className="btn btn-secondary" onClick={onHide}>Close</button>
+                        <button type="button" className="btn btn-secondary" id="bookCloseButton" onClick={onHide}>Close</button>
                     </div>
                 </div>
             </div>

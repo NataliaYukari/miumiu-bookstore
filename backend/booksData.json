@@ -91,19 +91,6 @@
     "coverImage": "/cover_will_my_cat.jpg"
   },
   {
-    "title": "Musashi",
-    "author": "Eiji Yoshikawa",
-    "description": "Lured to the great Battle of Sekigahara in 1600 by the hope of becoming a samurai. He regains consciousness after the battle to find himself lying defeated, dazed and wounded among thousands of the dead and dying.",
-    "isbn": "978-1-5683-6648-7",
-    "publisher": "Kodansha USA",
-    "edition": "First Edition",
-    "year": "2012",
-    "pages": "984",
-    "shoppingLink": "https://www.amazon.com.br/Musashi-Epic-Novel-Samurai-English-ebook/dp/B00CD428BU",
-    "coverImage": "https://m.media-amazon.com/images/I/81calS03CyL._SY425_.jpg",
-    "id": 9
-  },
-  {
     "title": "Clean Code",
     "author": "Robert C. Martin",
     "description": "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.",
@@ -115,5 +102,18 @@
     "shoppingLink": "https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882",
     "coverImage": "/cover_clean_code.jpg",
     "id": 10
+  },
+  {
+    "title": "A street cat named Bob",
+    "author": "James Bowen",
+    "description": "James is a street musician struggling to make ends meet.  Bob is a stray cat looking for somewhere warm to sleep.",
+    "isbn": "978-1-2500-4867-7",
+    "publisher": "St. Martin's Griffin",
+    "edition": "First Edition",
+    "year": "2014",
+    "pages": "320",
+    "shoppingLink": "https://www.amazon.com/Street-Cat-Named-Bob-Saved/dp/1250048672/ref=sr_1_1?crid=3GNI62TPFUQ00&dib=eyJ2IjoiMSJ9.cdkDhpg7tzVx6StgPm-Pu6AcEh3PTiWZU0ypilKaeTKd4r0zwYzCBhz4K0_FsxWvIemCCvEcYIrzWgGaHTT4h1ll5a-WXtXxI36QD0FGjFCkSNSZCwfeGeW-v9wlPDtKgkzS8ggLFCE5cx8SeavDMbEJGhtNfmTt5m8fxZRDzRZbfKTHa_MbfCo83gdIo8O4844LV7erM5Zo7J9GAAu8Z0kkXIG4EFodvvHvGyGCF6c.80JnHd_pLk7F1Tpds-NIhM5pcN-x2jeeZbcqkmMTqGg&dib_tag=se&keywords=a+street+cat+named+bob&qid=1746037859&s=books&sprefix=street+cat+%2Cstripbooks-intl-ship%2C408&sr=1-1",
+    "coverImage": "https://m.media-amazon.com/images/I/81TOq3TqKhL._SL1500_.jpg",
+    "id": 11
   }
 ]

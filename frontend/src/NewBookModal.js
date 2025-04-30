@@ -67,7 +67,7 @@ function NewBookModal({ show, onHide, onBookAdded, onAddSuccess }) {
     const fields = [
         { name: 'title', label: 'Title' },
         { name: 'author', label: 'Author' },
-        { name: 'description', label: 'Descriptions' },
+        { name: 'description', label: 'Description' },
         { name: 'isbn', label: 'ISBN' },
         { name: 'publisher', label: 'Publisher' },
         { name: 'edition', label: 'Edition' },
@@ -88,7 +88,7 @@ function NewBookModal({ show, onHide, onBookAdded, onAddSuccess }) {
                     <div className="modal-body">
                         {fields.map((field) => (
                             <div key={field.name} className="mb-3">
-                                <label htmlFor={field.name} className="form-label">
+                                <label htmlFor={field.name} className="form-label" class="modalLabel">
                                     {field.label}:
                                 </label>
                                 <input
@@ -104,8 +104,8 @@ function NewBookModal({ show, onHide, onBookAdded, onAddSuccess }) {
                         ))}
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" onClick={onHide}>Close</button>
-                        <button type="button" className="btn btn-primary" onClick={handleSave}>Save changes</button>
+                        <button type="button" className="btn btn-secondary" id="newBookCloseButton" onClick={onHide}>Close</button>
+                        <button type="button" className="btn btn-primary"  id="newBookSaveButton" onClick={handleSave}>Save changes</button>
                     </div>
                 </div>
             </div>

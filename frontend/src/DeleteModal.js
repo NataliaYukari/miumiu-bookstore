@@ -18,8 +18,8 @@ function DeleteModal({show, onHide, book, onDelete}) {
                         <p>This action cannot be undone!</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" onClick={onHide}>Close</button>
-                        <button type="button" class="btn btn-danger" onClick={handleDelete}>Delete the book</button>
+                        <button type="button" class="btn btn-secondary" id="cancelDeleteButton" onClick={onHide}>Close</button>
+                        <button type="button" class="btn btn-danger" id="deleteButton" onClick={handleDelete}>Delete the book</button>
                     </div>
                 </div>
             </div>

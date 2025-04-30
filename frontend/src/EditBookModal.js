@@ -46,7 +46,7 @@ function EditBookModal({show, onHide, book, onSave}) {
                     <div className="modal-body">
                         {fields.map((field) => (
                             <div key={field.name} className="mb-3">
-                                <label htmlFor={field.name} className="form-label">
+                                <label htmlFor={field.name} className="form-label" class="modalLabel">
                                     {field.label}:
                                 </label>
                                 <input
@@ -63,8 +63,8 @@ function EditBookModal({show, onHide, book, onSave}) {
                         ))}
                     </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={onHide}>Close</button>
-                    <button type="button" className="btn btn-primary" onClick={handleSave}>Save changes</button>
+                    <button type="button" className="btn btn-secondary" id="editBookCloseButton" onClick={onHide}>Close</button>
+                    <button type="button" className="btn btn-primary"  id="editBookSaveButton" onClick={handleSave}>Save changes</button>
                 </div>
             </div>
         </div>
