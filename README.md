@@ -1,3 +1,33 @@
+# Miumiu's Bookstore
+
+A responsive, mobile-first application that allows users to add, view, update, and delete books. 
+It does not require a database, as all book information is stored in a JSON file.
+
+Assignment for the Web Application Development college course.
+
+## Features
+- Add new books with information such as:
+  - Title
+  - Author
+  - Edition
+  - Publisher
+  - Year
+  - Number of pages
+  - Shopping link
+  - Cover image 
+- Update a book's information
+- Delete a book
+- View a list of registered books
+- View the information of a book
+
+## Technologies used
+- [Javascript] (https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [React] (https://react.dev/)
+- [Node.js] (https://nodejs.org/pt)
+- GUI: [Bootstrap] (https://getbootstrap.com/)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
